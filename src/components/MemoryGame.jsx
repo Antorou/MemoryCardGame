@@ -76,6 +76,16 @@ const MemoryGame = () => {
     }, 1000);
   };
 
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    if (matches === cards.length / 2 && cards.length > 0) {
+      setTimeout(() => {
+        setShowModal(true);
+      }, 300);
+    }
+  }, [matches, cards.length]);
+
   return (
     <div className="memory-container">
 
@@ -87,18 +97,30 @@ const MemoryGame = () => {
             onClick={() => handleCardClick(card)}
           >
             <img className="front-face" src={card.img} alt={card.framework} />
-            <img className="back-face" src="/img/back.png" alt="Back" />
+            <img className="back-face" src="/img/backk.png" alt="Back" />
           </div>
         ))}
       </div>
 
       <div className="score-panel">
         <p className="errors">Errors: {errors}</p>
-        {matches === cards.length / 2 && (
-          <p className="win-message">🎉 You won ! Errors: {errors}</p>
-        )}
         <button onClick={initializeGame}>Restart</button>
       </div>
+
+      {showModal && (
+      <div className="modal-overlay">
+        <div className="modal-content">
+          <h2>🎉 You won!</h2>
+          <p>Errors: {errors}</p>
+          <button onClick={() => {
+            setShowModal(false);
+            initializeGame();
+          }}>
+            Play Again
+          </button>
+        </div>
+      </div>
+    )}
     </div>
   );
 };

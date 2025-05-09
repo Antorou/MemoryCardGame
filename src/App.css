@@ -19,7 +19,7 @@ html, body {
 
 .App {
   min-height: 100vh;
-  background: linear-gradient(to top, #acadff, #8183ff 60%);
+  background: linear-gradient(to right, #c3d3ff, #4f8cff 60%);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@ html, body {
 .title {
   font-size: 64px;
   font-weight: 400;
-  padding-top: 24px;
+  padding-top: 80px;
   color: white;
   animation: slideDownFade 1s ease-out forwards;
   opacity: 0;
