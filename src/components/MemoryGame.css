@@ -1,0 +1,100 @@
+.memory-container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.score-panel {
+  margin-bottom: 20px;
+}
+
+.win-message {
+  color: rgb(36, 175, 36);
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+button {
+  padding: 16px 32px;
+  background-color: #85002d;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+
+button:hover {
+  background-color: #ff0055;
+  transform: scale(1.1);
+}
+
+.memory-game {
+  display: grid;
+  grid-template-columns: repeat(4, 180px);
+  grid-template-rows: repeat(3, 180px);
+  gap: 10px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: center;
+}
+
+.memory-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  transform: rotateY(0deg);
+  cursor: pointer;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.memory-card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.back-face {
+  transform: rotateY(0deg);
+}
+
+.errors {
+  font-size: 24px;
+  color: rgba(241, 70, 70, 0.836);
+  font-weight: 800;
+  animation: errorAnimation 1s ease-in-out infinite;
+}
+
+@keyframes errorAnimation {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

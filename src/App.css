@@ -1,0 +1,75 @@
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  min-height: 100vh;
+  background: linear-gradient(to top, #acadff, #8183ff 60%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* TITLE ANIMATION */
+.title {
+  font-size: 64px;
+  font-weight: 400;
+  padding-top: 24px;
+  color: white;
+  animation: slideDownFade 1s ease-out forwards;
+  opacity: 0;
+}
+
+.grass {
+  font-weight: 900;
+}
+
+/* SENTENCE ANIMATION */
+.sentence {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 12px;
+  color: rgb(250, 250, 250);
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+/* ANIMATION KEYFRAMES */
+@keyframes slideDownFade {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
